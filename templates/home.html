@@ -12,7 +12,8 @@
             <div class="card-body">
                 <h5>{{post.author.username}}</h5>
                 <h5 class="card-title">{{post.title}}</h5>
-                <p class="card-text max-lines"><i id='text_{{post.pk}}'>{{ post.body|slice:":100"|safe }}</i></p>
+                {% comment %} <p class="card-text max-lines"><i id='text_{{post.pk}}'>{{ post.body|slice:":100"|safe }}</i></p> {% endcomment %}
+                <p class="card-text max-lines"><i id='text_{{post.pk}}'>{{ post.snip }}</i></p>
                 <div class="card-link cats"><a href="{% url 'category' post.category %}">{{post.category}}</a></div>
                 <h6 href="#" class="card-link date">{{post.post_date}}</h6>
                 <div class="card-link liked"><i class="fa-regular fa-face-grin-squint"></i> 11</div>
