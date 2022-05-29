@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% block title %}
+ | {{object.title}}
+{% endblock %}
+{% block content %}
+    <div class="post-entry">
+        <h2>{{object.title}}</h2> 
+        <small>
+        By: {{object.author.username}}<br/>
+        Date: {{object.post_date}}<br/>
+        <div  class="card-link cats"><a href="{% url 'category' post.category %}">{{post.category}}</a></div>
+        <div  class="card-link like_counter">{{ total_likes }} liked</div>
+        {% if user.is_authenticated %}
+            {% if user.id == post.author.id %}
+                <a href="{% url 'delete_post' post.pk %}" class="btn btn-danger delete"><i class="fa-regular fa-trash-can"></i></a>
+                <a href="{% url 'update_post' post.pk %}" class="btn btn-primary edit"><i class="fa-regular fa-pen-to-square"></i></a>
+            {% endif %}
+
+        {% endif %}
+        <br/>
+        <hr>
+        <p><i>{{object.body|safe}}</i></p>
+        <br/>
+        <hr>
+        {% comment %} <a class="btn btn-secondary" href="{% url 'home' %}"><i class="fa-solid fa-angle-left"></i></a> {% endcomment %}
+        {% if user.is_authenticated %}
+            {% comment %} <a href="{% url 'like_post' post.pk %}" class="btn btn-primary hit_like"><i class="fa-regular fa-face-grin-squint"></i> 45000</a>
+            <a href="{% url 'dislike_post' post.pk %}" class="btn btn-primary hit_dislike"><i class="fa-regular fa-face-frown-open"></i> 5000</a> {% endcomment %}
+            {% comment %} <a href="" class="btn btn-primary hit_dislike"><i class="fa-regular fa-face-frown-open"></i> 5000</a> {% endcomment %}
+            <form action="{% url 'like_post' post.pk %}" method="POST">{% csrf_token %}
+            {% if liked %}
+                <button type="submit" name="post_id", value="{{ post.id }}" class="btn btn-primary hit_dislike"><i class="fa-regular fa-face-frown-open"></i></button>
+            {% else %}
+                <button type="submit" name="post_id", value="{{ post.id }}" class="btn btn-primary hit_like"><i class="fa-regular fa-face-grin-squint"></i></button>
+            {% endif %}
+            </form>
+        {% endif %}
+
+    </div>
+{% endblock content %}
