@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import date, datetime
+from ckeditor.fields import RichTextField
 # Create your models here.
 class Category (models.Model):
     name=models.CharField(max_length=100)
@@ -15,7 +16,8 @@ class Category (models.Model):
 class Post (models.Model):
     title=models.CharField(max_length=100)
     author=models.ForeignKey(User, on_delete=models.CASCADE)
-    body=models.TextField()
+    body=RichTextField(blank=True, null=True)
+    # body=models.TextField()
     post_date = models.DateField(auto_now_add=True)
     category = models.CharField(max_length=255, default="coding")
     likes = models.ManyToManyField(User, related_name='blog_posts')
