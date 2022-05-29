@@ -22,7 +22,7 @@
         <p><i>{{object.body|safe}}</i></p>
         <br/>
         <hr>
-        {% comment %} <a class="btn btn-secondary" href="{% url 'home' %}"><i class="fa-solid fa-angle-left"></i></a> {% endcomment %}
+        {% comment %}  {% endcomment %}
         {% if user.is_authenticated %}
             {% comment %} <a href="{% url 'like_post' post.pk %}" class="btn btn-primary hit_like"><i class="fa-regular fa-face-grin-squint"></i> 45000</a>
             <a href="{% url 'dislike_post' post.pk %}" class="btn btn-primary hit_dislike"><i class="fa-regular fa-face-frown-open"></i> 5000</a> {% endcomment %}
