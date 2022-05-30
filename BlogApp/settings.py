@@ -78,14 +78,22 @@ WSGI_APPLICATION = 'BlogApp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',#_psycopg2
-        'NAME': 'BlogDB',
-        'USER': 'postgres',
-        'PASSWORD': 1202,
-        'HOST': 'localhost',
-        'PORT': 1200
-    }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        'CONN_MAX_AGE': 500
+    }, 
+    
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',#_psycopg2
+#         'NAME': 'BlogDB',
+#         'USER': 'postgres',
+#         'PASSWORD': 1202,
+#         'HOST': 'localhost',
+#         'PORT': 1200
+#     }
+# }
 
 
 # Password validation
