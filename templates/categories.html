@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <h5>{{post.author.username}}</h5>
                     <h5 class="card-title">{{post.title}}</h5>
-                    <p class="card-text max-lines"><i id='text_{{post.pk}}'>{{ post.body|slice:":100"|safe }}</i></p>
+                    <p class="card-text max-lines"><i id='text_{{post.pk}}'>{{  post.snip |slice:":100"|safe }}</i></p>
                     <div href="#" class="card-link cats">{{post.category}}</div>
                     <h6 href="#" class="card-link date">{{post.post_date}}</h6>
                     <p href="#" class="card-link">{{post.like}}</p>

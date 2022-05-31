@@ -99,8 +99,9 @@ header.masthead {
   background-color: chartreuse;
 }
 .btn-primary {
-  background-color: black;
-  border-color: transparent;
+  background-color: chartreuse;
+  color: black;
+  border: none;
 }
 .btn-primary:hover{
   background-color: chartreuse;
@@ -142,8 +143,13 @@ header.masthead {
   bottom: 5%;
   right: 3%;
   z-index: 9999;
-  border-radius: 41px;
   color: chartreuse;
+  background-color: transparent;
+  border: none;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  font-size: 35px;
 }
 .hit_dislike{
   position: fixed;
@@ -151,14 +157,13 @@ header.masthead {
   right: 3%;
   z-index: 9999;
   border-radius: 41px;
-  color: red;
-}
-.hit_like:hover{
-  /* background-color: red; */
-  color: black;
-}
-.hit_dislike:hover{
-  background-color: red;
+  color: chartreuse;
+  background-color: transparent;
+  border: none;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  font-size: 35px;
 }
 .like_counter{
   position: relative;
@@ -172,4 +177,28 @@ header.masthead {
   padding: 0.5rem;
   border-radius: 14px;
   box-shadow: 2px 2px 5px #32c5cd;
+}
+
+svg.svg-inline--fa.fa-face-grin-squint {
+  position: relative;
+  bottom: 0.145em;
+  right: 0.25em;
+}
+
+svg.svg-inline--fa.fa-face-frown-open{
+  position: relative;
+  bottom: 0.145em;
+  right: 0.25em;
+}
+
+.hit_dislike:hover{
+    background-color: transparent;
+    color: chartreuse;
+}
+.hit_like:hover{
+  background-color: transparent;
+  color: chartreuse;
+}
+header.masthead {
+  background-color: chartreuse;
 }

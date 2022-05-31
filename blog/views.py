@@ -1,11 +1,10 @@
-from multiprocessing import context
-from unicodedata import category, name
 from django.shortcuts import render, get_list_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post, Category
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
+
 # Create your views here.
 
 
