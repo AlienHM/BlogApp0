@@ -4,10 +4,10 @@
 
 <h1>Posts</h1>
 <br/>
-    {% for post in object_list %}
+    {% for post in POST %}
 
-    {% comment %} <div class="post-entry" id="{{post.pk}}"> {% endcomment %}
-        {% comment %} <a href='{% url "post_detail" post.pk %}'> {% endcomment %}
+    <div class="post-entry" id="{{post.pk}}">
+        <a href='{% url "post_detail" post.pk %}'>
         <div class="card">
             <div class="card-body">
             <p>Love and Thunder</p>
@@ -28,10 +28,10 @@
     </div>
 
     {% endfor %}
-    {% comment %} {% if user.is_authenticated %}
+    {% if user.is_authenticated %}
         <a class="btn btn-primary new_post" href="{% url 'new_post' %}"> + NEW POST</a>
         <a class="btn btn-primary new_category" href="{% url 'new_category' %}"> + NEW CATEGORY</a>
-    {% endif %} {% endcomment %}
+    {% endif %} 
 
  
 {% endblock content %}

@@ -18,7 +18,7 @@ class Category (models.Model):
 class Post (models.Model):
     title=models.CharField(max_length=100)
     author=models.ForeignKey(User, on_delete=models.CASCADE)
-    body=RichTextField(blank=True, null=True)
+    bodyy=RichTextField(blank=True, null=True)
     post_date = models.DateField(auto_now_add=True)
     category = models.CharField(max_length=255, default="coding")
     snip=models.CharField(max_length=100, default="Click above to read more...")
